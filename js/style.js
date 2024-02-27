@@ -7,6 +7,7 @@ function getData(inpTxt) {
 }
 const displayPhn = (phones) => {
   const container = document.getElementById(`phone-container`);
+  container.textContent = "";
     // console.log(phones);
     phones.forEach(phone => {
       const card = document.createElement(`div`)
