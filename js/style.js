@@ -1,15 +1,17 @@
-function getData() {
-  return fetch("https://openapi.programming-hero.com/api/phones?search=iphone")
+function getData(inpTxt) {
+  return fetch(
+    `https://openapi.programming-hero.com/api/phones?search=${inpTxt}`
+  )
     .then((res) => res.json())
     .then((phones) => displayPhn(phones.data));
 }
 const displayPhn = (phones) => {
   const container = document.getElementById(`phone-container`);
-    console.log(phones);
+    // console.log(phones);
     phones.forEach(phone => {
       const card = document.createElement(`div`)
       card.innerHTML = `
-      <div class="card w-96 bg-base-100 shadow-xl">
+      <div class="card bg-base-100 shadow-xl">
                     <figure class="px-10 pt-10">
                         <img src="${phone.image}"
                             class="rounded-xl" />
@@ -29,5 +31,12 @@ const displayPhn = (phones) => {
     });
 };
 
+
+const btnHandler = ()=>{
+  const inpBox = document.getElementById(`inp-box`);
+  const inpTxt = inpBox.value;
+  console.log(inpTxt)
+  getData(inpTxt);
+}
 
 getData();

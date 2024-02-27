@@ -11,9 +11,15 @@
 </head>
 
 <body>
-    <header></header>
-    <main class="container mx-auto">
-        <section>
+    <header class="bg-yellow-500" >
+        <div class="container mx-auto py-5">
+            <input id="inp-box" type="text" placeholder="Type here" class="input input-bordered w-full max-w-xs" />
+            <button onclick="btnHandler()" class="btn btn-success">Search</button>
+        </div>
+    </header>
+    <main class="container mx-auto ">
+
+        <section class="mt-12">
             <div id="phone-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 ">
                 <!-- card -->
                 <!-- <div class="card w-96 bg-base-100 shadow-xl">
