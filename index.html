@@ -12,9 +12,14 @@
 
 <body>
     <header class="bg-yellow-500" >
-        <div class="container mx-auto py-5">
-            <input id="inp-box" type="text" placeholder="Type here" class="input input-bordered w-full max-w-xs" />
-            <button onclick="btnHandler()" class="btn btn-success">Search</button>
+        <div class="container mx-auto py-5 flex justify-between items-center">
+            <div>
+                <h1 class="text-5xl text-white font-extrabold">Ehsan's <span class=" text-red-600 ">Store</span></h1>
+            </div>
+            <div class="flex items-center gap-3">
+                <input id="inp-box" type="text" placeholder="Type here" class="input input-bordered w-full max-w-xs" />
+                <button onclick="btnHandler()" placeholder="search here..." class="btn bg-red-600 border-none text-white">Search</button>
+            </div>
         </div>
     </header>
     <main class="container mx-auto ">
@@ -37,6 +42,7 @@
                 </div> -->
             </div>
         </section>
+        <button id="show-more-btn" class="btn hidden btn-active btn-secondary">Show More</button>
     </main>
     <footer></footer>
 

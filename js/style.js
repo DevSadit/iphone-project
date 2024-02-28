@@ -8,10 +8,20 @@ function getData(inpTxt) {
 const displayPhn = (phones) => {
   const container = document.getElementById(`phone-container`);
   container.textContent = "";
-    // console.log(phones);
-    phones.forEach(phone => {
-      const card = document.createElement(`div`)
-      card.innerHTML = `
+  console.log(phones);
+
+  // show-more-btn related work:
+  const showMoreBtn = document.getElementById(`show-more-btn`);
+  if(phones.length > 12){
+    const newPhones = phones.slice(0,12);
+    showMoreBtn.classList.remove(`hidden`);
+  } else {
+    showMoreBtn.classList.add(`hidden`);
+  }
+
+  phones.forEach((phone) => {
+    const card = document.createElement(`div`);
+    card.innerHTML = `
       <div class="card bg-base-100 shadow-xl">
                     <figure class="px-10 pt-10">
                         <img src="${phone.image}"
@@ -26,17 +36,15 @@ const displayPhn = (phones) => {
                     </div>
                 </div>
       `;
-      container.appendChild(card);
-
-      
-    });
+    container.appendChild(card);
+  });
 };
 
 
 const btnHandler = ()=>{
   const inpBox = document.getElementById(`inp-box`);
   const inpTxt = inpBox.value;
-  console.log(inpTxt)
+  // console.log(inpTxt)
   getData(inpTxt);
 }
 
