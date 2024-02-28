@@ -6,19 +6,19 @@ function getData(inpTxt) {
     .then((phones) => displayPhn(phones.data));
 }
 const displayPhn = (phones) => {
+  // console.log(phones);
   const container = document.getElementById(`phone-container`);
   container.textContent = "";
-  console.log(phones);
 
   // show-more-btn related work:
   const showMoreBtn = document.getElementById(`show-more-btn`);
-  if(phones.length > 12){
-    const newPhones = phones.slice(0,12);
+  if (phones.length > 12) {
     showMoreBtn.classList.remove(`hidden`);
   } else {
     showMoreBtn.classList.add(`hidden`);
   }
-
+  //  show only first 12 mbl
+  phones = phones.slice(0, 12);
   phones.forEach((phone) => {
     const card = document.createElement(`div`);
     card.innerHTML = `
@@ -38,14 +38,27 @@ const displayPhn = (phones) => {
       `;
     container.appendChild(card);
   });
+
+  // hide loadding spiner
+  loaderHandle(false)
 };
 
-
-const btnHandler = ()=>{
+const btnHandler = () => {
+  loaderHandle(true)
   const inpBox = document.getElementById(`inp-box`);
   const inpTxt = inpBox.value;
   // console.log(inpTxt)
   getData(inpTxt);
+};
+
+const loaderHandle = (isLoading)=>{
+  const loader = document.getElementById(`loader`);
+  if(isLoading){
+    loader.classList.remove(`hidden`)
+  } else{
+    loader.classList.add(`hidden`);
+  }
 }
 
 getData();
+// iphone samsung oppo

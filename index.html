@@ -24,7 +24,12 @@
     </header>
     <main class="container mx-auto ">
 
-        <section class="mt-12">
+
+        <section class="mt-12 ">
+            <!-- Loader -->
+                    <div class="flex justify-center my-52 hidden" id="loader">
+                        <span  class=" loading loading-spinner loading-lg "></span>
+                    </div>
             <div id="phone-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 ">
                 <!-- card -->
                 <!-- <div class="card w-96 bg-base-100 shadow-xl">
@@ -42,7 +47,10 @@
                 </div> -->
             </div>
         </section>
-        <button id="show-more-btn" class="btn hidden btn-active btn-secondary">Show More</button>
+
+        <div class="flex justify-center my-12">
+            <button id="show-more-btn" class="btn font-bold">Show More</button>
+        </div>
     </main>
     <footer></footer>
 
